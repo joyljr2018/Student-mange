@@ -129,6 +129,17 @@ public class mainView extends JFrame {
 		getContentPane().add(btnNewButton);
 		
 		JButton btnEditStudent = new JButton("Edit student");
+		btnEditStudent.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				int rowNum=table.getSelectedRow();
+				if(rowNum==-1) {
+					JOptionPane.showMessageDialog(null,"Please select a student");
+					
+				}
+				editView edit =new editView(sm,rowNum);
+				edit.setVisible(true);
+			}
+		});
 		btnEditStudent.setBounds(45, 186, 129, 23);
 		getContentPane().add(btnEditStudent);
 		
